@@ -43,7 +43,10 @@ module.exports = {
 			        waitUntil: 'networkidle0',
 			    })
 
-				const candidateHeader = await page.waitForSelector('div[data-for="candidateHeader"]', { timeout: 1000 }).then(() => {
+			    var candidateHeader = page.waitForSelector(
+			    	'div[data-for="candidateHeader"]', {
+			    		visible: true
+			    }).then(() => {
 					return true
 				}).catch((res) => {
 					return false
@@ -57,13 +60,9 @@ module.exports = {
 
 				var html = await page.content()
 
-				await page.waitForTimeout(500)
+				await page.waitForSelector('.-mcYW7', {visible: true})
 
 				var html = lib.getContent(html,'<div class="-mcYW7">','<div class="-h5Bty -ytoRt">')
-
-				// var fileName = 'logs/'+ number +'.html'
-				// lib.writeContent(html, fileName)
-				// lib.success(`... ${fileName} has been created ✅`)
 
 				let dataKeys = [...html.matchAll(/data-key=\"([a-zA-Z0-9\.\-\_]+)\"/gm)]
 

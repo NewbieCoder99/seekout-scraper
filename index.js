@@ -5,17 +5,17 @@ const seekOutExportData = require('./scrapper/app.seekout.io/exportData')
 
 const args = process.argv.slice(2)
 
-if(args[0] == 'so-login') {
+if(args[0] == 'seekout-login') {
     seekOutLogin.index()
     return
 }
 
-if(args[0] == 'so-gd') {
+if(args[0] == 'seekout-get') {
     seekOutGetData.index(args[1],args[2],args[3])
     return
 }
 
-if(args[0] == 'so-ed') {
+if(args[0] == 'seekout-export') {
     seekOutExportData.index()
     return
 }

@@ -65,7 +65,7 @@ module.exports = {
 		var rowNumber = 2
 		var totalExported = 0
 		for(var i = 0; i < data.length; i++) {
-			var candidate = JSON.parse(data[i].data)
+			var candidate = data[i].data
 
 			worksheet.getCell('A' + rowNumber).value = i + 1
 			worksheet.getCell('B' + rowNumber).value = candidate.name
