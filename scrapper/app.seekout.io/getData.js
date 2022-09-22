@@ -36,6 +36,8 @@ module.exports = {
 			const browser = await puppeteer.launch(lib.puppeteerOptions())
 			const page = await browser.newPage()
 
+			await page.setDefaultNavigationTimeout(process.env.NAVIGATION_DEFAULT_TIMEOUT)
+
 			var number = startNumber
 			for(var i = 0; i < lengthNumber; i++) {
 
@@ -53,14 +55,24 @@ module.exports = {
 				})
 
 				if(!candidateHeader) {
-					lib.warning(`⚠️  ... Please try again to login into this dashboard.`)
+					lib.warning(`⚠️  ... Retries to previouse page.`)
+					continue
 				}
 
 				await this.autoScroll(page)
 
 				var html = await page.content()
 
-				await page.waitForSelector('.-mcYW7', {visible: true})
+			    var candidateElement = page.waitForSelector('.-mcYW7', { visible: true }).then(() => {
+					return true
+				}).catch((res) => {
+					return false
+				})
+
+				if(!candidateElement) {
+					lib.warning(`⚠️  ... Retries to previouse page.`)
+					continue
+				}
 
 				var html = lib.getContent(html,'<div class="-mcYW7">','<div class="-h5Bty -ytoRt">')
 
