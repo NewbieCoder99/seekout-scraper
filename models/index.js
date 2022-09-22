@@ -5,7 +5,7 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.json')[env];
+const config = require(__dirname + '/../config/config')[env];
 const db = {};
 
 let sequelize;
@@ -13,13 +13,13 @@ let sequelize;
 require('dotenv').config()
 
 sequelize = new Sequelize(
-  process.env.DB_DATABASE,
-  process.env.DB_USERNAME,
-  process.env.DB_PASSWORD, {
-    username: process.env.DB_USERNAME,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE,
-    host: process.env.DB_HOST,
+  config.database,
+  config.username,
+  config.password, {
+    username: config.username,
+    password: config.password,
+    database: config.database,
+    host: config.host,
     operatorAlias:false,
     logging:false,
     pool: {
@@ -27,7 +27,7 @@ sequelize = new Sequelize(
         idle: 30000,
         acquire: 60000,
     },
-    dialect: process.env.DB_CONNECTION
+    dialect: config.dialect
   }
 );
 

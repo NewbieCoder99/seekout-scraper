@@ -103,7 +103,7 @@ module.exports = {
 							var location = ''
 						}
 
-						await scrapeData.create({
+						scrapeData.create({
 							condition : {
 								code : candidateKey
 							},
