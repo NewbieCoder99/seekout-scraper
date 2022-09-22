@@ -106,7 +106,7 @@ module.exports = {
 
 		const { count, rows } = await scrapeData.findAll({
 			serviceName : 'seekout',
-			isExported :0
+			isExported : null
 		}, 1000)
 
 		this.exportData(rows)
