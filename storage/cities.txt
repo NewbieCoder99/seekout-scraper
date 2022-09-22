@@ -1,0 +1,46 @@
+Jabodetabek
+Dki Jakarta
+Jawa Barat
+Jawa Timur
+Jawa Tengah
+Riau
+Bali
+Kota Depok
+Kota Bandung
+Banten
+Bangka Belitung
+Kota Bekasi
+Kab. Bekasi
+Bengkulu
+Kota Bogor
+Kota Cilegon
+Dalam Negeri
+Di Yogyakarta
+Gorontalo
+Jambi
+Kalimantan Barat
+Kalimantan Selatan
+Kalimantan Tengah
+Kalimantan Timur
+Kalimantan Utara
+Kepulauan Riau
+Lampung
+Maluku
+Maluku Utara
+Nanggroe Aceh Darussalam (Nad)
+Nusa Tenggara Barat (Ntb)
+Nusa Tenggara Timur (Ntt)
+Papua
+Papua Barat
+Kota Serang
+Sulawesi Barat
+Sulawesi Selatan
+Sulawesi Tengah
+Sulawesi Tenggara
+Sulawesi Utara
+Sumatera Barat
+Sumatera Selatan
+Sumatera Utara
+Kota Surabaya
+Kab. Tangerang
+Kota Tangerang Selatan
