@@ -16,6 +16,16 @@ if(args[0] == 'seekout-get') {
 }
 
 if(args[0] == 'seekout-export') {
-    seekOutExportData.index()
+
+    /*
+    * args[1] = Category
+    * args[2] = Prefix File Name
+    */
+    seekOutExportData.index(args[1], args[2])
+    return
+}
+
+if(args[0] == 'seekout-reset') {
+    seekOutExportData.reset()
     return
 }

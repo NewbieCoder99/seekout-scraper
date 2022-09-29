@@ -8,7 +8,7 @@ module.exports = {
             defaults : data.data
 		})
 	},
-	findAll : async function(condition, limit = 1, orderBy = 'desc') {
+	findAllWithCount : async function(condition, limit = 1, orderBy = 'desc') {
         return await Models.ScrapeData.findAndCountAll({
             where: condition,
             order : [
@@ -20,6 +20,16 @@ module.exports = {
             limit : limit
         })
 	},
+    findAll : async function(condition, limit = 1, offset, orderBy = 'desc') {
+        return await Models.ScrapeData.findAll({
+            where: condition,
+            order : [
+                ['id', orderBy]
+            ],
+            offset: offset,
+            limit : limit
+        })
+    },
     findAllWithoutFilter : async function() {
         return await Models.ScrapeData.findAndCountAll({
             order : [
@@ -38,6 +48,11 @@ module.exports = {
             where : {
                 code : code
             }
+        })
+    },
+    countData : async function(condition) {
+        return await Models.ScrapeData.count({
+            where : condition
         })
     },
     resetData : async function() {
