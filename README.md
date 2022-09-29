@@ -31,7 +31,6 @@ DB_PASSWORD="YOUR DATABASE PASSWORD"</code></pre>
         Login to the dashboard of seekout with this command.
         <pre><code>node index seekout-login</code></pre>
         <p>After logged in and success, just type <b>CTRL + C<b> to stop terminal session.</b>
-        <p>Video : https://www.loom.com/share/add5211fc87d4becb56fffc1366ee10a</p>
     </li>
     <li>
         Find and get your URL id projec, example *b4950535-1548-4fd4-8706-5740d2fb055e*, it would be look like this
