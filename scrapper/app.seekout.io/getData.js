@@ -123,6 +123,9 @@ module.exports = {
 								serviceName: 'seekout',
 								computerName : process.env.COMPUTER_NAME,
 								category : pathProject,
+								isExported : 0,
+								exportStatus : null,
+								isScraped : false,
 								data : {
 									code : candidateKey,
 									hashCode : md5(candidateKey),
@@ -131,8 +134,7 @@ module.exports = {
 									role :role,
 									company : company,
 									location : location
-								},
-								isScraped : false
+								}
 							}
 						})
 
